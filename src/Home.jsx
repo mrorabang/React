@@ -10,11 +10,9 @@ function Home() {
         const filtered = lists.filter(post => post.title.toLowerCase().includes(search.toLowerCase()));
         setFilteredLists(filtered);
     };
-
     useEffect(() => {
         handleSearch();
-    }, [search]); // Sử dụng useEffect để theo dõi thay đổi của search và kích hoạt handleSearch
-
+    }, [search]);
     useEffect(() => {
         fetch("https://653f72d89e8bd3be29e095a1.mockapi.io/Post")
             .then((data) => data.json())
